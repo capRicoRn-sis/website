@@ -1,15 +1,207 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title>〇〇塾 | 基礎学力向上</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>塾名（未定）| 個別コーチング塾</title>
+    <style>
+        /* 基本設定 */
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        /* ① ヘッダー */
+        header {
+            background: #fff;
+            padding: 20px 5%;
+            border-bottom: 1px solid #eee;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* ② ヒーローエリア（スライドショー） */
+        .hero {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            background: #ddd; /* 写真がない時の色 */
+        }
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            max-width: 400px;
+        }
+        .hero-content h2 { margin: 0; color: #d35400; }
+
+        /* ③ ナビゲーションメニュー */
+        nav.main-nav {
+            background: #fff;
+            border-bottom: 2px solid #2c3e50;
+            margin-bottom: 20px;
+        }
+        nav.main-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+        nav.main-nav a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        nav.main-nav a:hover { background: #f0f0f0; }
+
+        /* レイアウト全体 */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 30px;
+        }
+
+        /* メインコンテンツ（左） */
+        main { flex: 3; }
+
+        /* ④ コース紹介 */
+        .course-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .course-card {
+            position: relative;
+            height: 150px;
+            background: #34495e;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .course-card:hover { opacity: 0.9; }
+        .course-card:hover::after {
+            content: " →";
+            font-size: 24px;
+        }
+
+        /* ⑤ 実績・生徒の声 */
+        .student-info {
+            background: #fff;
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* ⑥ サイドバー（右） */
+        aside {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+        .sidebar-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .sidebar-item h4 { color: #2c3e50; margin-bottom: 5px; }
+
+        /* ⑦ 高専特化ページへのリンク */
+        .kosen-link {
+            background: #e67e22;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <h1>〇〇塾</h1>
-  <p>英会話</p>
-  <p>塾</p>
-  <p>高専生特化型塾</p>
-  <a href="#">無料相談はこちら</a>
+
+    <header>
+        <div class="logo">塾のロゴ（仮）</div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>一人ひとりに寄り添う。<br>オーダーメイドのコーチング。</h2>
+            <p>各家庭に合わせたプランを、地域最安値クラスの価格で提供します。</p>
+        </div>
+        </section>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#">コース紹介</a></li>
+            <li><a href="#">教室紹介</a></li>
+            <li><a href="#">講師紹介</a></li>
+            <li><a href="#">お知らせ</a></li>
+            <li><a href="#">予約・お問合せ</a></li>
+            <li><a href="#">ブログ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            <section>
+                <h3>コース紹介</h3>
+                <div class="course-grid">
+                    <a href="#" class="course-card">
+                        <h2>英会話コース</h2>
+                    </a>
+                    <a href="#" class="course-card">
+                        <h2>個別学習指導</h2>
+                    </a>
+                </div>
+            </section>
+
+            <section class="student-info">
+                <h3>卒業生・塾生の声</h3>
+                <p>これまで一緒に学んできた子どもたちの成長の記録を紹介します。</p>
+                <ul>
+                    <li>Aさん：苦手な数学を克服し、志望校合格！</li>
+                    <li>Bくん：コーチングで学習習慣が定着。</li>
+                </ul>
+            </section>
+        </main>
+
+        <aside>
+            <div class="sidebar-item">
+                <h4>教室の場所</h4>
+                <p>〇〇県〇〇市1-2-3</p>
+            </div>
+            <div class="sidebar-item">
+                <h4>お電話・メール</h4>
+                <p>000-0000-0000<br>info@example.com</p>
+            </div>
+            <div class="sidebar-item">
+                <h4>イベント・無料体験</h4>
+                <p>現在、春の無料体験受付中！</p>
+            </div>
+
+            <a href="#" class="kosen-link">高専受験・補習でお悩みの方はこちら</a>
+        </aside>
+    </div>
+
 </body>
 </html>
