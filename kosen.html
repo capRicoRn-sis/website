@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>高専受験・高専補習特化 | 塾名（未定）</title>
+    <style>
+        /* 高専ページ専用：ダークテーマ設定 */
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            color: #e0e0e0; 
+            background-color: #121212; /* 真っ黒すぎない高級感のある黒 */
+            line-height: 1.7;
+        }
+        
+        header { background: #1a1a1a; padding: 15px 5%; border-bottom: 1px solid #333; }
+        .logo { font-size: 20px; font-weight: bold; color: #fff; text-decoration: none; }
+        .logo span { color: #f39c12; } /* アクセントカラー */
+
+        .breadcrumb { max-width: 1200px; margin: 10px auto; padding: 0 20px; font-size: 0.8rem; color: #888; }
+        .container { display: flex; max-width: 1200px; margin: 20px auto; padding: 0 20px; gap: 40px; }
+        
+        /* メインコンテンツ */
+        main { flex: 3; background: #1e1e1e; padding: 30px; border-radius: 12px; border: 1px solid #333; }
+        h1 { 
+            font-size: 2rem;
+            color: #fff;
+            border-left: 5px solid #f39c12; 
+            padding-left: 15px; 
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+        h2 { color: #f39c12; margin-top: 40px; font-size: 1.5rem; border-bottom: 1px solid #333; padding-bottom: 10px;}
+
+        /* 特徴的なグリッド */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .feature-item {
+            background: #252525;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid #f39c12;
+            transition: transform 0.3s;
+        }
+        .feature-item:hover { transform: translateY(-5px); }
+        .feature-item h3 { color: #fff; margin-top: 0; font-size: 1.1rem; }
+
+        /* 強調テキスト */
+        .highlight-box {
+            background: linear-gradient(45deg, #2c3e50, #000);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #f39c12;
+            margin: 30px 0;
+        }
+
+        /* サイドバー（ダーク版） */
+        aside { flex: 1; position: sticky; top: 20px; height: fit-content; }
+        .sidebar-box { background: #1e1e1e; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #333; }
+        .sidebar-box h4 { margin-top: 0; color: #f39c12; border-bottom: 1px solid #f39c12; display: inline-block; }
+        
+        .btn-cta { 
+            display: block; 
+            background: #f39c12; 
+            color: #000; 
+            text-align: center; 
+            padding: 15px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            font-weight: bold; 
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn-cta:hover { background: #e67e22; }
+        
+        .back-home {
+            display: inline-block;
+            margin-top: 20px;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .back-home:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">塾名（未定）<span>KOSEN Campus</span></a>
+    </header>
+
+    <div class="breadcrumb">
+        ホーム > 高専特化ページ
+    </div>
+
+    <div class="container">
+        <main>
+            <h1>高専受験・高専補習 専門プログラム</h1>
+            <p>特殊なカリキュラム、早い進度、そして専門科目。高専には高専のための戦略が必要です。現役高専生から受験生まで、理系のプロがコーチングします。</p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>入試対策</h3>
+                    <p style="font-size: 0.85rem;">マークシート特有の傾向と対策、過去問徹底分析で合格を勝ち取ります。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>専門科目フォロー</h3>
+                    <p style="font-size: 0.85rem;">数学（線形代数・微分積分）や物理など、高専独自の難問を解説。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>編入・留年対策</h3>
+                    <p style="font-size: 0.85rem;">大学編入試験を見据えた学習や、厳しい進級基準をクリアするための徹底指導。</p>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3 style="margin-top: 0; color: #f39c12;">なぜ「高専」に強いのか？</h3>
+                <p>当塾には高専の教育システムを熟知したスタッフが在籍しています。コーチングにより「自分で解く力」を養い、レポート作成やテスト対策の効率を最大化させます。</p>
+            </div>
+
+            <h2>指導可能科目</h2>
+            <ul>
+                <li>基礎数学・微分積分・線形代数・確率統計</li>
+                <li>物理・化学（高専カリキュラム準拠）</li>
+                <li>各学科 専門基礎科目</li>
+                <li>TOEIC対策（編入・就職用）</li>
+            </ul>
+
+            <a href="index.html" class="back-home">← 一般の塾ページへ戻る</a>
+        </main>
+
+        <aside>
+            <div class="sidebar-box">
+                <h4>高専専用相談窓口</h4>
+                <p style="font-size: 0.9rem;">
+                    高専受験の悩みから、学内の赤点対策までお気軽にご相談ください。
+                </p>
+                <a href="#" class="btn-cta">無料カウンセリング</a>
+            </div>
+            
+            <div class="sidebar-box">
+                <h4>アクセス</h4>
+                <p style="font-size: 0.8rem; color: #bbb;">
+                    〒000-0000<br>〇〇県〇〇市1-2-3<br>
+                    TEL: 000-0000-0000
+                </p>
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>
