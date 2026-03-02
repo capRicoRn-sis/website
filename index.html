@@ -29,9 +29,45 @@
         /* ② ヒーローエリア（スライドショー） */
         .hero {
             position: relative;
-            height: 400px;
+            height: 500px;
             overflow: hidden;
-            background: #ddd; /* 写真がない時の色 */
+            background: #eee; /* 写真がない時の色 */
+        }
+        .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0; /* 最初は透明 */
+        animation: slider-animation 15s infinite; /* 15秒サイクルで無限ループ */
+        }
+
+        /* 1枚目：即座に表示 */
+        .slide:nth-child(1) {
+            background-image: url('photo1.jpg'); /* ここに1枚目の画像パス */
+            animation-delay: 0s;
+        }
+        /* 2枚目：5秒遅らせて表示 */
+        .slide:nth-child(2) {
+            background-image: url('photo2.jpg'); /* ここに2枚目の画像パス */
+            animation-delay: 5s;
+        }
+        /* 3枚目：10秒遅らせて表示 */
+        .slide:nth-child(3) {
+            background-image: url('photo3.jpg'); /* ここに3枚目の画像パス */
+            animation-delay: 10s;
+        }
+
+        /* ふわっと切り替わるアニメーション */
+        @keyframes slider-animation {
+            0% { opacity: 0; }
+            5% { opacity: 1; }   /* 5%の地点で完全に表示 */
+            30% { opacity: 1; }  /* 30%の地点まで表示を維持 */
+            38% { opacity: 0; }  /* 38%の地点で次の画像へ */
+            100% { opacity: 0; }
         }
         .hero-content {
             position: absolute;
