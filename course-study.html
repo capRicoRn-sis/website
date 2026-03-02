@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>個別学習指導 | 塾名（未定）</title>
+    <style>
+        /* 共通設定 */
+        body { margin: 0; font-family: sans-serif; color: #333; background-color: #f9f9f9; line-height: 1.8; }
+        header { background: #fff; padding: 15px 5%; border-bottom: 1px solid #eee; }
+        .logo { font-size: 20px; font-weight: bold; color: #2c3e50; text-decoration: none; }
+        .breadcrumb { max-width: 1200px; margin: 10px auto; padding: 0 20px; font-size: 0.8rem; color: #777; }
+        .container { display: flex; max-width: 1200px; margin: 20px auto; padding: 0 20px; gap: 40px; }
+        
+        /* メインコンテンツ */
+        main { flex: 3; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        h1 { border-left: 5px solid #3498db; padding-left: 15px; margin-bottom: 30px; }
+        h2 { color: #2c3e50; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 40px; }
+
+        /* コーチングステップの図解風 */
+        .step-container { display: flex; gap: 15px; margin: 20px 0; }
+        .step-card { flex: 1; background: #f0f7ff; padding: 15px; border-radius: 8px; text-align: center; border: 1px solid #d1e3f8; }
+        .step-num { display: inline-block; background: #3498db; color: #fff; width: 25px; height: 25px; border-radius: 50%; margin-bottom: 10px; font-weight: bold; }
+
+        /* 料金表 */
+        .price-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .price-table th, .price-table td { border: 1px solid #eee; padding: 15px; text-align: center; }
+        .price-table th { background: #fcfcfc; color: #555; }
+        .highlight { color: #e67e22; font-weight: bold; font-size: 1.2rem; }
+
+        /* サイドバー（共通） */
+        aside { flex: 1; position: sticky; top: 20px; height: fit-content; }
+        .sidebar-box { background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee; }
+        .btn-contact { display: block; background: #2c3e50; color: #fff; text-align: center; padding: 12px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 10px; transition: 0.3s; }
+        .btn-contact:hover { opacity: 0.8; }
+        .kosen-banner { background: #e67e22; color: #fff; padding: 15px; text-align: center; display: block; text-decoration: none; border-radius: 8px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">塾名（未定）</a>
+    </header>
+
+    <div class="breadcrumb">
+        ホーム > コース紹介 > 個別学習指導
+    </div>
+
+    <div class="container">
+        <main>
+            <h1>個別学習指導（コーチング）</h1>
+            <p>「何をどう勉強すればいいかわからない」を解決します。当塾は一方的な授業ではなく、生徒自身が学習をコントロールできるようになる「コーチング」を軸にしています。</p>
+
+            <h2>成績が上がる3ステップ</h2>
+            <div class="step-container">
+                <div class="step-card">
+                    <span class="step-num">1</span>
+                    <div style="font-weight: bold;">現状分析</div>
+                    <div style="font-size: 0.85rem;">苦手な原因を徹底的に掘り下げます。</div>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">2</span>
+                    <div style="font-weight: bold;">計画作成</div>
+                    <div style="font-size: 0.85rem;">各家庭の状況に合わせ、無理のない学習計画を立てます。</div>
+                </div>
+                <div class="step-card">
+                    <span class="step-num">3</span>
+                    <div style="font-weight: bold;">習慣化</div>
+                    <div style="font-size: 0.85rem;">自走できるようになるまで寄り添ってサポートします。</div>
+                </div>
+            </div>
+
+            <h2>安心の料金プラン</h2>
+            <p>一人ひとりに寄り添いたいからこそ、通い続けやすい価格を追求しました。</p>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>学年</th>
+                        <th>週1回</th>
+                        <th>週2回</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>小学生</td>
+                        <td><span class="highlight">8,000円〜</span></td>
+                        <td>15,000円〜</td>
+                    </tr>
+                    <tr>
+                        <td>中学生</td>
+                        <td><span class="highlight">12,000円〜</span></td>
+                        <td>22,000円〜</td>
+                    </tr>
+                    <tr>
+                        <td>高校生</td>
+                        <td><span class="highlight">15,000円〜</span></td>
+                        <td>28,000円〜</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size: 0.8rem; color: #777;">※すべて税込価格です。入塾金や教材費についてはお問合せください。</p>
+
+            <a href="#" class="btn-contact" style="background: #3498db; margin-top: 30px;">自分に合ったプランを相談する（無料）</a>
+        </main>
+
+        <aside>
+            <div class="sidebar-box">
+                <h4>教室情報</h4>
+                <p style="font-size: 0.9rem;">
+                    <strong>住所:</strong> 〇〇県〇〇市1-2-3<br>
+                    <strong>電話:</strong> 000-0000-0000
+                </p>
+                <a href="#" class="btn-contact" style="background: #27ae60;">LINEで相談</a>
+            </div>
+
+            <a href="kosen.html" class="kosen-banner">高専受験・補習特化<br>専用ページはこちら</a>
+        </aside>
+    </div>
+
+</body>
+</html>
