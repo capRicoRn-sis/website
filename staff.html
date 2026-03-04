@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個別コーチング塾 | 一人ひとりに寄り添う教育</title>
+    <style>
+        /* --- 基本設定 --- */
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            color: #333;
+            background-color: #fdfdfd;
+            line-height: 1.7;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- ① ヘッダー --- */
+        header {
+            background: #fff;
+            padding: 15px 5%;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* --- ② ヒーローエリア（スライドショー） --- */
+        .hero {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+            background: #eee;
+        }
+        .slide {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: slider-animation 15s infinite;
+        }
+        /* サンプル画像を入れています。ご自身の写真に差し替えてください */
+        .slide:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80'); animation-delay: 0s; }
+        .slide:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80'); animation-delay: 5s; }
+        .slide:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=1200&q=80'); animation-delay: 10s; }
+
+        @keyframes slider-animation {
+            0% { opacity: 0; }
+            5% { opacity: 1; }
+            30% { opacity: 1; }
+            35% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%; left: 5%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            max-width: 450px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .hero-content h2 { margin: 0; color: #d35400; font-size: 1.8rem; }
+
+        /* --- ③ メニューバー --- */
+        nav.main-nav {
+            background: #fff;
+            border-bottom: 3px solid #2c3e50;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav.main-nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0; padding: 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav.main-nav a {
+            display: block;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
+        nav.main-nav a:hover { background: #f8f9fa; color: #3498db; }
+
+        /* --- レイアウト構造 --- */
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            gap: 40px;
+        }
+        main { flex: 3; }
+        aside { flex: 1; }
+
+        /* --- ④ コース紹介 --- */
+        .section-title {
+            border-left: 5px solid #2c3e50;
+            padding-left: 15px;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+        }
+        .course-grid { display: flex; flex-direction: column; gap: 20px; }
+        .course-card {
+            position: relative;
+            height: 160px;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        /* 背景に薄暗いフィルターをかけて文字を読みやすく */
+        .course-card::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3); transition: 0.4s;
+        }
+        .course-card:hover::before { background: rgba(0,0,0,0.5); }
+        
+        .eng-bg { background-image: url('https://images.unsplash.com/photo-1543165796-5426273ea4d2?auto=format&fit=crop&w=600&q=80'); background-size: cover; }
+        .study-bg { background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80'); background-size: cover; }
+
+        .course-card h3 { z-index: 1; font-size: 1.6rem; transition: 0.4s; }
+        .course-card::after {
+            content: "→"; position: absolute; right: 40px; font-size: 2rem;
+            opacity: 0; transform: translateX(-20px); transition: 0.4s; z-index: 1;
+        }
+        .course-card:hover h3 { transform: translateX(-20px); }
+        .course-card:hover::after { opacity: 1; transform: translateX(0); }
+
+        /* --- ⑤ 生徒たちの情報 --- */
+        .student-section { margin-top: 50px; }
+        .student-card {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        .student-icon { font-size: 2rem; background: #f0f7ff; padding: 10px; border-radius: 50%; }
+
+        /* --- ⑥ サイドバー（右） --- */
+        .sidebar-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .sidebar-box h4 { margin-top: 0; color: #2c3e50; border-bottom: 2px solid #f1c40f; display: inline-block; margin-bottom: 15px; }
+        .info-list { font-size: 0.9rem; list-style: none; padding: 0; }
+        .info-list li { margin-bottom: 10px; }
+
+        .btn-action {
+            display: block;
+            background: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .btn-action:hover { background: #2980b9; }
+
+        /* ⑦ 高専特化リンク */
+        .kosen-banner {
+            display: block;
+            background: #e67e22;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+        .kosen-banner:hover { background: #d35400; transform: translateY(-3px); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">塾名（仮）</div>
+    </header>
+
+    <section class="hero">
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="hero-content">
+            <h2>コーチングで、<br>学びはもっと自由になる。</h2>
+            <p>一人ひとりの状況に合わせた専用メニュー。低価格で続けやすい、新しいカタチの塾です。</p>
+        </div>
+    </section>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="course-study.html">コース紹介</a></li>
+            <li><a href="room.html">教室紹介</a></li>
+            <li><a href="staff.html">講師紹介</a></li>
+            <li><a href="#">お知らせ</a></li>
+            <li><a href="#">予約・お問合せ</a></li>
+            <li><a href="#">講師Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <main>
+            <section>
+                <h2 class="section-title">コース紹介</h2>
+                <div class="course-grid">
+                    <a href="course-english.html" class="course-card eng-bg">
+                        <h3>英会話コース</h3>
+                    </a>
+                    <a href="course-study.html" class="course-card study-bg">
+                        <h3>個別学習指導</h3>
+                    </a>
+                </div>
+            </section>
+
+            <section class="student-section">
+                <h2 class="section-title">今まで見てきた子たちのこと</h2>
+                <div class="student-card">
+                    <div class="student-icon">🎓</div>
+                    <div>
+                        <strong>Aさん（中学3年生）</strong>
+                        <p style="margin: 5px 0 0; font-size: 0.9rem;">数学が苦手だったけれど、コーチングで自分に合った解き方を見つけ、第一志望校に合格しました！</p>
+                    </div>
+                </div>
+                <div class="student-card">
+                    <div class="student-icon">🌟</div>
+                    <div>
+                        <strong>Bくん（小学6年生）</strong>
+                        <p style="margin: 5px 0 0; font-size: 0.9rem;">英会話コースで「話す楽しさ」を実感。今では家でも英語で挨拶するようになりました。</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <aside>
+            <div class="sidebar-box">
+                <h4>教室のご案内</h4>
+                <ul class="info-list">
+                    <li>📍 〇〇県〇〇市1-2-3</li>
+                    <li>📞 000-0000-0000</li>
+                    <li>📧 info@example.com</li>
+                </ul>
+                <a href="#" class="btn-action">無料体験のお申し込み</a>
+                <a href="#" class="btn-action" style="background:#27ae60;">公式LINEで相談</a>
+            </div>
+
+            <a href="kosen.html" class="kosen-banner">
+                高専受験・補習<br>専門プログラムはこちら
+            </a>
+            
+            <div class="sidebar-box" style="margin-top: 25px;">
+                <h4>イベント情報</h4>
+                <p style="font-size: 0.85rem;">春の入塾金無料キャンペーン実施中！（4月末まで）</p>
+            </div>
+        </aside>
+    </div>
+
+</body>
+</html>
