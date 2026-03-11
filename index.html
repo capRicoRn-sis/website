@@ -26,39 +26,53 @@
             color: #2c3e50;
         }
 
-        /* ② ヒーローエリア（スライドショー） */
+       /* ② ヒーローエリア（スライドショー） */
         .hero {
             position: relative;
-            height: 500px;
+            height: 500px; /* ★基本の高さ（スマホ・タブレット向け） */
             overflow: hidden;
-            background: #eee; /* 写真がない時の色 */
-        }
-        .slide {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        opacity: 0; /* 最初は透明 */
-        animation: slider-animation 15s infinite; /* 15秒サイクルで無限ループ */
+            background: #333; /* 背景が見えた時用の暗い色 */
+            transition: height 0.3s ease; /* 高さが変わるときのアニメーション */
         }
 
-        /* 1枚目：即座に表示 */
-        .slide:nth-child(1) {
-            background-image: url('three_kids_halloween.jpg'); /* 1枚目の画像パス */
-            animation-delay: 0s;
+        /* ★ここを追加：PCなど全画面表示時の設定（画面幅992px以上） */
+        @media (min-width: 992px) {
+            .hero {
+                height: 650px; /* ★全画面表示時の新しい高さ */
+            }
         }
-        /* 2枚目：5秒遅らせて表示 */
-        .slide:nth-child(2) {
-            background-image: url('vishaka_teaching.jpg'); /* 2枚目の画像パス */
-            animation-delay: 5s;
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: slider-animation 15s infinite;
         }
-        /* 3枚目：10秒遅らせて表示 */
-        .slide:nth-child(3) {
-            background-image: url('classroom_view_1.jpg'); /* 3枚目の画像パス */
-            animation-delay: 10s;
+
+        /* --- 以下は変更なし（確認用） --- */
+        .slide:nth-child(1) { background-image: url('three_kids_halloween.jpg'); animation-delay: 0s; }
+        .slide:nth-child(2) { background-image: url('vishaka_teaching.jpg'); animation-delay: 5s; }
+        .slide:nth-child(3) { background-image: url('classroom_view_1.jpg'); animation-delay: 10s; }
+
+        @keyframes slider-animation {
+            0% { opacity: 0; }
+            5% { opacity: 1; }
+            33% { opacity: 1; }
+            38% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+
+        /* ★hero-contentの位置をPC表示に合わせて微調整（オプション） */
+        @media (min-width: 992px) {
+            .hero-content {
+                max-width: 500px; /* 文字を少し広く */
+                padding: 40px; /* 余白を少し多く */
+            }
         }
 
         /* ふわっと切り替わるアニメーション */
