@@ -29,16 +29,15 @@
        /* ② ヒーローエリア（スライドショー） */
         .hero {
             position: relative;
-            height: 500px; /* ★基本の高さ（スマホ・タブレット向け） */
+            height: 500px;
             overflow: hidden;
-            background: #333; /* 背景が見えた時用の暗い色 */
-            transition: height 0.3s ease; /* 高さが変わるときのアニメーション */
+            background: #333;
+            transition: height 0.3s ease;
         }
 
-        /* ★ここを追加：PCなど全画面表示時の設定（画面幅992px以上） */
         @media (min-width: 992px) {
             .hero {
-                height: 650px; /* ★全画面表示時の新しい高さ */
+                height: 650px;
             }
         }
 
@@ -54,7 +53,6 @@
             animation: slider-animation 15s infinite;
         }
 
-        /* --- 以下は変更なし（確認用） --- */
         .slide:nth-child(1) { background-image: url('three_kids_halloween.jpg'); animation-delay: 0s; }
         .slide:nth-child(2) { background-image: url('vishaka_teaching.jpg'); animation-delay: 5s; }
         .slide:nth-child(3) { background-image: url('classroom_view_1.jpg'); animation-delay: 10s; }
@@ -67,22 +65,6 @@
             100% { opacity: 0; }
         }
 
-        /* ★hero-contentの位置をPC表示に合わせて微調整（オプション） */
-        @media (min-width: 992px) {
-            .hero-content {
-                max-width: 500px; /* 文字を少し広く */
-                padding: 40px; /* 余白を少し多く */
-            }
-        }
-
-        /* ふわっと切り替わるアニメーション */
-        @keyframes slider-animation {
-            0% { opacity: 0; }
-            5% { opacity: 1; }   /* 5%の地点で完全に表示 */
-            33% { opacity: 1; }  /* 30%の地点まで表示を維持 */
-            38% { opacity: 0; }  /* 38%の地点で次の画像へ */
-            100% { opacity: 0; }
-        }
         .hero-content {
             position: absolute;
             top: 50%;
@@ -170,13 +152,30 @@
         /* ⑥ サイドバー（右） */
         aside {
             flex: 1;
+            height: fit-content;
+        }
+        .sidebar-box {
             background: #fff;
             padding: 20px;
             border-radius: 8px;
-            height: fit-content;
+            border: 1px solid #eee;
+            margin-bottom: 20px;
         }
-        .sidebar-item { margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .sidebar-item h4 { color: #2c3e50; margin-bottom: 5px; }
+        .sidebar-box h4 { color: #2c3e50; margin-top: 0; margin-bottom: 10px; border-bottom: 2px solid #f1c40f; display: inline-block; }
+
+        /* LINEボタン */
+        .btn-line {
+            display: block;
+            background: #06c755;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-line:hover { opacity: 0.8; }
 
         /* ⑦ 高専特化ページへのリンク */
         .kosen-link {
@@ -188,14 +187,14 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 5px;
-            margin-top: 20px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo"></div>
+        <div class="logo">TamaLab.</div>
     </header>
 
     <section class="hero">
@@ -244,15 +243,22 @@
         </main>
 
         <aside>
-            <div class="sidebar-item">
-                <h4>教室の場所</h4>
-                <p>〇〇県〇〇市1-2-3</p>
+            <div class="sidebar-box">
+                <h4>LINEで相談・予約</h4>
+                <p style="font-size: 0.85rem; margin-bottom: 15px;">体験予約やご相談はLINEからお気軽にどうぞ。</p>
+                <a href="#" class="btn-line">公式LINEで相談する</a>
             </div>
-            <div class="sidebar-item">
-                <h4>お電話・メール</h4>
-                <p>000-0000-0000<br>info@example.com</p>
+
+            <a href="kosen.html" class="kosen-link">高専受験・補修でお悩みの方はこちら</a>
+
+            <div class="sidebar-box">
+                <h4>教室情報</h4>
+                <p style="font-size: 0.9rem;">
+                    〇〇県〇〇市1-2-3<br>
+                    000-0000-0000<br>
+                    info@example.com
+                </p>
             </div>
-            <a href="kosen.html" class="kosen-link">高専受験・補習でお悩みの方はこちら</a>
         </aside>
     </div>
 
